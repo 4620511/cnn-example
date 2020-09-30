@@ -1,0 +1,4 @@
+# @package _group_
+name: cifar10
+num_classes: 10
+root: ./data
