@@ -24,3 +24,7 @@ lint:
 .PHONY: test
 test:
 	poetry run pytest -v
+
+.PHONY: view
+view:
+	poetry run tensorboard --logdir="outputs"
