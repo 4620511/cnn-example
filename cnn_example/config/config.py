@@ -18,17 +18,6 @@ class Logger:
 
 
 @dataclass
-class Preprocess:
-    pass
-
-
-@dataclass
-class Test:
-    checkpoint_path: str
-    tags: List[str]
-
-
-@dataclass
 class Train:
     batch_size: int
     gpus: List[int]
@@ -44,6 +33,4 @@ class Train:
 class Config(DictConfig):
     data: Data
     logger: Logger
-    preprocess: Preprocess
-    test: Test
     train: Train
