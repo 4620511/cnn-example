@@ -5,7 +5,7 @@ from pytorch_lightning.loggers import TensorBoardLogger
 
 from cnn_example.config import Config
 from cnn_example.data import DataModule
-from cnn_example.trainer.resnet18 import ResNet18Module
+from cnn_example.trainer import get_trainer
 from cnn_example.utils import experiment
 
 torch.backends.cudnn.benchmark = True  # type: ignore
@@ -15,7 +15,7 @@ SEED = 42
 
 @hydra.main(config_path="config", config_name="config")
 def main(cfg: Config):
-    model = ResNet18Module(cfg)
+    model = get_trainer(cfg)(cfg)
     data = DataModule(cfg)
     tensorboard_logger = TensorBoardLogger(name=cfg.logger.name, save_dir=cfg.logger.save_dir)
     trainer = Trainer(

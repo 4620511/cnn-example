@@ -1,0 +1,9 @@
+# @package _group_
+batch_size: 512
+gpus: [0]
+model: resnet50
+num_epochs: 30
+num_workers: 8
+pre_trained: true
+tags: ["resnet50", "train"]
+train_rate: 0.7
