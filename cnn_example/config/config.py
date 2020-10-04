@@ -18,6 +18,12 @@ class Logger:
 
 
 @dataclass
+class Preprocess:
+    horizontal_flip: bool
+    horizontal_flip_rate: float
+
+
+@dataclass
 class Train:
     batch_size: int
     gpus: List[int]
@@ -33,4 +39,5 @@ class Train:
 class Config(DictConfig):
     data: Data
     logger: Logger
+    preprocess: Preprocess
     train: Train

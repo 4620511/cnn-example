@@ -1,4 +1,5 @@
 defaults:
   - data: cifar10
   - logger: tensorboard
+  - preprocess: baseline
   - train: resnet18
