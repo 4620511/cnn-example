@@ -1,5 +1,5 @@
 # @package _group_
-horizontal_flip: false
+horizontal_flip: true
 horizontal_flip_rate: 0.5
-random_rotation: false
+random_rotation: true
 random_rotation_degrees: 30

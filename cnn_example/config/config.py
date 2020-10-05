@@ -21,6 +21,8 @@ class Logger:
 class Preprocess:
     horizontal_flip: bool
     horizontal_flip_rate: float
+    random_rotation: bool
+    random_rotation_degrees: int
 
 
 @dataclass

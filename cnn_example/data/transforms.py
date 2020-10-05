@@ -9,6 +9,8 @@ def get_transforms(config: Config, train: bool) -> T.Compose:
     if train:
         if config.preprocess.horizontal_flip:
             transforms.append(T.RandomHorizontalFlip(p=config.preprocess.horizontal_flip_rate))
+        if config.preprocess.random_rotation:
+            transforms.append(T.RandomRotation(degrees=config.preprocess.random_rotation_degrees))
 
     transforms += [
         T.Resize((224, 224)),

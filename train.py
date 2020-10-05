@@ -15,6 +15,7 @@ SEED = 42
 
 @hydra.main(config_path="config", config_name="config")
 def main(cfg: Config):
+    print(cfg.pretty())
     model = get_trainer(cfg)(cfg)
     data = DataModule(cfg)
     tensorboard_logger = TensorBoardLogger(name=cfg.logger.name, save_dir=cfg.logger.save_dir)
