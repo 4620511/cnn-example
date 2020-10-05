@@ -23,10 +23,10 @@ class DataModule(LightningDataModule):
 
         dataset: torchvision.datasets.VisionDataset = torchvision.datasets.__dict__[self._config.data.name.upper()]
         self._train_dataset = dataset(  # type: ignore
-            root=data_root, train=True, download=True, transform=get_transforms(self._config)
+            root=data_root, train=True, download=True, transform=get_transforms(self._config, True)
         )
         self._val_dataset = dataset(  # type: ignore
-            root=data_root, train=False, download=True, transform=get_transforms(self._config)
+            root=data_root, train=False, download=True, transform=get_transforms(self._config, False)
         )
 
     def train_dataloader(self):
